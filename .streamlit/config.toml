@@ -4,3 +4,7 @@ backgroundColor="#565168"
 secondaryBackgroundColor="#797D8B"
 textColor="#D9E1EE"
 font="monospace"
+
+[client]
+displayEnabled=false
+showErrorDetails=false
