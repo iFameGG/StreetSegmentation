@@ -4,7 +4,6 @@ from streamlit_image_comparison import image_comparison
 from PIL import Image
 import albumentations as A
 
-import requests
 import os
 os.environ["SM_FRAMEWORK"] = "tf.keras"
 
@@ -68,7 +67,7 @@ custom_objects = {
 }
 
 with keras.utils.custom_object_scope(custom_objects):
-    model = keras.models.load_model('model.h5')
+    model = keras.models.load_model('unet_model.h5')
 
 st.divider()
 
