@@ -6,5 +6,4 @@ textColor="#D9E1EE"
 font="monospace"
 
 [client]
-displayEnabled=false
 showErrorDetails=false

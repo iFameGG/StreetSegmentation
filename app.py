@@ -4,6 +4,7 @@ from streamlit_image_comparison import image_comparison
 from PIL import Image
 import albumentations as A
 
+import requests
 import os
 os.environ["SM_FRAMEWORK"] = "tf.keras"
 
@@ -65,6 +66,7 @@ custom_objects = {
     'dice_loss_plus_1focal_loss': total_loss,
     'f1-score': sm.metrics.FScore(threshold=0.5)
 }
+
 with keras.utils.custom_object_scope(custom_objects):
     model = keras.models.load_model('model.h5')
 
@@ -97,7 +99,7 @@ if base_img_bytes is not None:
         d.addPairwiseGaussian(sxy=3, compat=3)
         d.addPairwiseBilateral(sxy=80, srgb=13, rgbim=base_img.copy(), compat=10)
 
-        Q = d.inference(20)
+        Q = d.inference(40)
         progress_bar.progress(90, text='Processing Mask')
 
         # Get the refined segmentation mask
