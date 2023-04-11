@@ -20,8 +20,18 @@ st.set_page_config(
     "Image Segmentation",
     layout="wide"
 )
-    
-st.title('Image Segmentation by Antonio Nardi')
+
+st.markdown("""
+<style>
+    #the-title {text-align: center}
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+</style>
+""", unsafe_allow_html=True)
+
+st.write("<h1 style='text-align: center;'>Semantic Segmentation</h1>", unsafe_allow_html=True)
+st.write("<p style='text-align: center;'>by Antonio Nardi</p>", unsafe_allow_html=True)
 
 
 ## Image Upload
@@ -100,6 +110,8 @@ if base_img_bytes is not None:
         image_comparison(
             img1=Image.fromarray(base_img),
             img2=mask_img,
-            width=700
+            width=700,
+            label1 = "Image",
+	        label2 = "Mask"
         )
     st.balloons()
