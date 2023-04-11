@@ -10,12 +10,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
-COPY model.h5 model.h5
 COPY app.py app.py
 COPY support.py support.py
 
 RUN mkdir .streamlit
 COPY .streamlit/config.toml .streamlit/config.toml
+
+RUN apt-get update && apt-get install -y wget
+RUN wget -O unet_model.h5 https://github.com/iFameGG/StreetSegmentation/raw/main/model.h5 
 
 RUN pip3 install -r requirements.txt
 
