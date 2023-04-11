@@ -4,16 +4,15 @@ from streamlit_image_comparison import image_comparison
 from PIL import Image
 import albumentations as A
 
+import os
+os.environ["SM_FRAMEWORK"] = "tf.keras"
+
 import tensorflow as tf
 from tensorflow import keras
 import segmentation_models as sm
 import pydensecrf.densecrf as dcrf
 from pydensecrf.utils import unary_from_softmax
 import numpy as np
-
-import os
-os.environ["SM_FRAMEWORK"] = "tf.keras"
-
 
 from support import restore_mask, mask_to_img, weights, class_dict
 
