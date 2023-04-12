@@ -1,4 +1,5 @@
 # Semantic Segmentation Project
+__TRY ME OUT:__ [Link to the web app](http://18.188.6.252/)
 
 # TLDR.
 <font size="4">This model uses the U-Net architecture, with a VGG16 backbone and Imagenet weights, to produce a multi class segmentation mask. The input image size is 512x512, because of memory constraints. When running the model on the testing set, I got an IoU of 0.66 and a F1 score of 0.68. 
@@ -710,7 +711,7 @@ plt.close(fig)
 
 ## U-Net
 
-<img src="https://www.researchgate.net/publication/331406702/figure/fig2/AS:731276273262594@1551361258173/Illustration-of-the-U-net-architecture-The-figure-illustrates-the-U-net-architecture.png" width=2000 />
+<img src="media/unet" width=2000 />
 
 <font size="4">For this problem, the U-Net architecture was chosen, because of it is very good at extracting features in a variety of different application. This makes it a good choice when having a small training sample and when considering the various issues with this dataset (big class imbalance and memory insufficiency).
 <br><br> U-Net works by having two sides, a encoder and decoder. The encoder downsamples the image, using convolutional layers and max pooling layers, to create feature maps. The decoder then upsamples result and concatenates it with the mirrored encoder, to regain the original shape and get more detail from the image. The output is then passed through a convolutional layer to produce a prediction.
