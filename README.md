@@ -156,7 +156,7 @@ plt.close()
     
 
 
-<font size="4">A lot of the images/masks have a very high resolution, with a mean resolution of around 4k. This would take up a lot of resources and I don't have the resources to store many images at this resolution. The comprimise I decided on was to resize all the images to 512x512. It would allow me to fit 6000 image and mask pairs into my training set. Moreover, the testing and training sets will have 1000 images each.</font>
+<font size="4">A lot of the images/masks have a very high resolution, with a mean resolution of around 4k. This would take up a lot of resources and I don't have the resources to store many images at this resolution. The comprimise I decided on was to resize all the images to 512x512. It would allow me to fit 6000 image and mask pairs into my training set. Moreover, the testing and validation sets will have 1000 images each.</font>
 
 ## Mask Versions
 
@@ -734,14 +734,6 @@ class UNet():
         self.batchnorm = batchnorm
         self.backbone = backbone
         self.dropout = dropout
-        
-    def VGG(self, inputs):
-        return applications.vgg19.VGG19(
-            include_top=False,
-            weights='imagenet',
-            input_tensor=inputs,
-            input_shape=self.input_size
-        )
     
     def multi_conv2d(self, inputs, filters):
         x = layers.Conv2D(filters, (3,3), padding=self.padding)(inputs)
