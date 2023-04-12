@@ -711,7 +711,7 @@ plt.close(fig)
 
 ## U-Net
 
-<img src="media/unet" width=2000 />
+<img src="media/unet.png" width=2000 />
 
 <font size="4">For this problem, the U-Net architecture was chosen, because of it is very good at extracting features in a variety of different application. This makes it a good choice when having a small training sample and when considering the various issues with this dataset (big class imbalance and memory insufficiency).
 <br><br> U-Net works by having two sides, a encoder and decoder. The encoder downsamples the image, using convolutional layers and max pooling layers, to create feature maps. The decoder then upsamples result and concatenates it with the mirrored encoder, to regain the original shape and get more detail from the image. The output is then passed through a convolutional layer to produce a prediction.
