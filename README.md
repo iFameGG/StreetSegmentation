@@ -1,5 +1,5 @@
 # Semantic Segmentation Project
-__TRY ME OUT:__ [Link to the web app](http://18.188.6.252/)
+__TRY ME OUT:__ [Link to the web app](http://3.17.159.102/)
 
 # TLDR.
 <font size="4">This model uses the U-Net architecture, with a VGG16 backbone and Imagenet weights, to produce a multi class segmentation mask. The input image size is 512x512, because of memory constraints. When running the model on the testing set, I got an IoU of 0.66 and a F1 score of 0.68. 
